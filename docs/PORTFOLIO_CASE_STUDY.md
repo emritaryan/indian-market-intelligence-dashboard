@@ -34,7 +34,7 @@ Dashboard screenshots are stored in [`docs/screenshots`](screenshots/README.md).
 
 ### Market overview
 
-![Market overview](https://github.com/user-attachments/assets/95fe6e28-7fd1-49ae-9fb4-99c4f0be7a9f)
+![Full-page market overview](https://github.com/user-attachments/assets/54c36a11-7936-45ae-99bb-f57876adbfd9)
 
 The Overview tab combines latest-session index trends, market direction, Nifty 100 movers, sector breadth, macro instruments, and open IPOs.
 
@@ -46,9 +46,9 @@ The Signals tab ranks Nifty 100 companies by their most recent bullish or bearis
 
 ### Stock analysis
 
-![Stock View price and volume analysis](https://github.com/user-attachments/assets/4394d304-fe4e-4a44-92ca-0e480ca772cf)
+![Full-page Stock View analysis](https://github.com/user-attachments/assets/74cbd4a5-aeea-493a-956a-01ee52907bb2)
 
-The Stock View screenshot shows RELIANCE price and volume history with interactive timeline controls and moving-average overlays.
+The full Stock View screenshot shows RELIANCE price and volume history, interactive timeline controls, technical indicators, delivery-volume analysis, and company fundamentals.
 
 ## Architecture
 
