@@ -15,19 +15,19 @@ A local React and FastAPI dashboard that combines Zerodha Kite, official NSE dat
 
 ### Market overview
 
-![Full-page market overview](https://github.com/user-attachments/assets/54c36a11-7936-45ae-99bb-f57876adbfd9)
+![Full-page market overview](https://github.com/user-attachments/assets/955e95b3-b695-453c-a481-4ccd9be438fd)
 
 Full-page view of live and latest-session index direction, market movers, sector breadth, commodities, currencies, and open IPOs.
 
 ### Nifty 100 signals
 
-![Nifty 100 SMA crossover scanner](docs/screenshots/signals.png)
+![Nifty 100 SMA crossover scanner](https://github.com/user-attachments/assets/bf497585-475a-44b2-92a3-19ceb51d5b67)
 
 The screenshot shows a completed Nifty 100 scan with 100 instruments ranked by their latest bullish or bearish SMA crossover.
 
 ### Stock analysis
 
-![Full-page Stock View analysis](https://github.com/user-attachments/assets/74cbd4a5-aeea-493a-956a-01ee52907bb2)
+![Full-page Stock View analysis](https://github.com/user-attachments/assets/872cf563-3bdc-4b7c-974b-74e65612b77f)
 
 Full-page RELIANCE analysis with price and volume, timeline controls, technical indicators, delivery participation, and fundamentals.
 
