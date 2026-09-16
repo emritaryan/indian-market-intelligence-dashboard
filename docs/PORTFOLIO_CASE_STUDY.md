@@ -32,11 +32,23 @@ The result is a locally hosted React and FastAPI application with four focused t
 
 Dashboard screenshots are stored in [`docs/screenshots`](screenshots/README.md). They are captured from an authenticated local session without login credentials, account tokens, or sensitive profile information.
 
+### Market overview
+
+![Market overview](https://github.com/user-attachments/assets/95fe6e28-7fd1-49ae-9fb4-99c4f0be7a9f)
+
+The Overview tab combines latest-session index trends, market direction, Nifty 100 movers, sector breadth, macro instruments, and open IPOs.
+
 ### Nifty 100 signals
 
 ![Nifty 100 signals](screenshots/signals.png)
 
-Additional Overview and Stock View screenshots can be added after a fresh Kite authorization provides current market data.
+The Signals tab ranks Nifty 100 companies by their most recent bullish or bearish SMA crossover.
+
+### Stock analysis
+
+![Stock View price and volume analysis](https://github.com/user-attachments/assets/4394d304-fe4e-4a44-92ca-0e480ca772cf)
+
+The Stock View screenshot shows RELIANCE price and volume history with interactive timeline controls and moving-average overlays.
 
 ## Architecture
 
@@ -157,3 +169,4 @@ At the time this case study was prepared, the backend suite contained 15 passing
 - Add accessibility and browser-level end-to-end tests.
 
 For the implementation sequence, see [Build Flow](BUILD_FLOW.md). For repository hygiene, see [Security](SECURITY.md).
+
