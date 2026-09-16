@@ -13,9 +13,23 @@ A local React and FastAPI dashboard that combines Zerodha Kite, official NSE dat
 
 ## Product preview
 
+### Market overview
+
+![Market overview](https://github.com/user-attachments/assets/95fe6e28-7fd1-49ae-9fb4-99c4f0be7a9f)
+
+Live and latest-session index direction, market movers, sector breadth, commodities, currencies, and open IPOs.
+
+### Nifty 100 signals
+
 ![Nifty 100 SMA crossover scanner](docs/screenshots/signals.png)
 
 The screenshot shows a completed Nifty 100 scan with 100 instruments ranked by their latest bullish or bearish SMA crossover.
+
+### Stock analysis
+
+![Stock View price and volume analysis](https://github.com/user-attachments/assets/4394d304-fe4e-4a44-92ca-0e480ca772cf)
+
+Interactive RELIANCE candlesticks, volume, timeline controls, and SMA 10/20/50/100 overlays.
 
 The [portfolio case study](docs/PORTFOLIO_CASE_STUDY.md) explains the product problem, architecture, analytics, engineering decisions, and results. The [build flow](docs/BUILD_FLOW.md) turns the implementation into a reusable guide for future data products.
 
