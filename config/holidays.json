@@ -1,0 +1,38 @@
+{
+  "year": 2026,
+  "sources": [
+    "https://www.nseindia.com/resources/exchange-communication-holidays",
+    "https://zerodha.com/marketintel/holiday-calendar/"
+  ],
+  "reviewed": "2026-09-13",
+  "reminder": "Update every January and after exchange special-session notices.",
+  "holidays": {
+    "2026-01-15": "Municipal elections \u2014 Maharashtra",
+    "2026-01-26": "Republic Day",
+    "2026-02-15": "Maha Shivaratri",
+    "2026-03-03": "Holi",
+    "2026-03-21": "Eid-Ul-Fitr",
+    "2026-03-26": "Shri Ram Navami",
+    "2026-03-31": "Shri Mahavir Jayanti",
+    "2026-04-03": "Good Friday",
+    "2026-04-14": "Dr. Ambedkar Jayanti",
+    "2026-05-01": "Maharashtra Day",
+    "2026-05-28": "Bakri Eid",
+    "2026-06-26": "Muharram",
+    "2026-08-15": "Independence Day",
+    "2026-09-14": "Ganesh Chaturthi",
+    "2026-10-02": "Mahatma Gandhi Jayanti",
+    "2026-10-20": "Dussehra",
+    "2026-11-08": "Diwali Laxmi Pujan",
+    "2026-11-10": "Diwali Balipratipada",
+    "2026-11-24": "Guru Nanak Jayanti",
+    "2026-12-25": "Christmas"
+  },
+  "special_sessions": {
+    "2026-11-08": {
+      "name": "Muhurat trading",
+      "open": null,
+      "close": null
+    }
+  }
+}

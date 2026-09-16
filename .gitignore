@@ -1,0 +1,34 @@
+# Local credentials and environment files
+credentials.txt
+.env
+.env.*
+!.env.example
+
+# Zerodha session and local runtime state
+*.session
+*.token
+.logs/
+*.log
+
+# Python
+backend/.venv/
+.venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+node_modules/
+dist/
+
+# Generated data exports
+nifty100sma_signals.csv
+/signal_page.png
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

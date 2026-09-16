@@ -1,0 +1,174 @@
+{
+  "refresh_seconds": 15,
+  "sections": [
+    "indices",
+    "nifty_chart",
+    "sectors",
+    "macro"
+  ],
+  "indices": [
+    {
+      "symbol": "NIFTY 50",
+      "name": "Nifty 50"
+    },
+    {
+      "symbol": "NIFTY BANK",
+      "name": "Nifty Bank"
+    },
+    {
+      "symbol": "NIFTY IT",
+      "name": "Nifty IT"
+    },
+    {
+      "symbol": "NIFTY PHARMA",
+      "name": "Nifty Pharma"
+    },
+    {
+      "symbol": "NIFTY AUTO",
+      "name": "Nifty Auto"
+    },
+    {
+      "symbol": "INDIA VIX",
+      "name": "India VIX"
+    }
+  ],
+  "watchlist": [
+    {
+      "symbol": "RELIANCE",
+      "company": "Reliance Industries Ltd.",
+      "sector": "Oil Gas & Consumable Fuels"
+    },
+    {
+      "symbol": "TCS",
+      "company": "Tata Consultancy Services Ltd.",
+      "sector": "Information Technology"
+    },
+    {
+      "symbol": "INFY",
+      "company": "Infosys Ltd.",
+      "sector": "Information Technology"
+    },
+    {
+      "symbol": "HCLTECH",
+      "company": "HCL Technologies Ltd.",
+      "sector": "Information Technology"
+    },
+    {
+      "symbol": "WIPRO",
+      "company": "Wipro Ltd.",
+      "sector": "Information Technology"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "company": "HDFC Bank Ltd.",
+      "sector": "Financial Services"
+    },
+    {
+      "symbol": "ICICIBANK",
+      "company": "ICICI Bank Ltd.",
+      "sector": "Financial Services"
+    },
+    {
+      "symbol": "SBIN",
+      "company": "State Bank of India",
+      "sector": "Financial Services"
+    },
+    {
+      "symbol": "AXISBANK",
+      "company": "Axis Bank Ltd.",
+      "sector": "Financial Services"
+    },
+    {
+      "symbol": "ITC",
+      "company": "ITC Ltd.",
+      "sector": "Fast Moving Consumer Goods"
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "company": "Hindustan Unilever Ltd.",
+      "sector": "Fast Moving Consumer Goods"
+    },
+    {
+      "symbol": "TATACONSUM",
+      "company": "Tata Consumer Products Ltd.",
+      "sector": "Fast Moving Consumer Goods"
+    },
+    {
+      "symbol": "MARUTI",
+      "company": "Maruti Suzuki India Ltd.",
+      "sector": "Automobile and Auto Components"
+    },
+    {
+      "symbol": "M&M",
+      "company": "Mahindra & Mahindra Ltd.",
+      "sector": "Automobile and Auto Components"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "company": "Sun Pharmaceutical Industries Ltd.",
+      "sector": "Healthcare"
+    },
+    {
+      "symbol": "CIPLA",
+      "company": "Cipla Ltd.",
+      "sector": "Healthcare"
+    },
+    {
+      "symbol": "DRREDDY",
+      "company": "Dr. Reddy's Laboratories Ltd.",
+      "sector": "Healthcare"
+    },
+    {
+      "symbol": "LT",
+      "company": "Larsen & Toubro Ltd.",
+      "sector": "Construction"
+    },
+    {
+      "symbol": "TATASTEEL",
+      "company": "Tata Steel Ltd.",
+      "sector": "Metals & Mining"
+    },
+    {
+      "symbol": "HINDALCO",
+      "company": "Hindalco Industries Ltd.",
+      "sector": "Metals & Mining"
+    },
+    {
+      "symbol": "NTPC",
+      "company": "NTPC Ltd.",
+      "sector": "Power"
+    },
+    {
+      "symbol": "POWERGRID",
+      "company": "Power Grid Corporation of India Ltd.",
+      "sector": "Power"
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "company": "Bharti Airtel Ltd.",
+      "sector": "Telecommunication"
+    }
+  ],
+  "macro": [
+    {
+      "symbol": "CL=F",
+      "name": "Crude Oil",
+      "unit": "USD / barrel"
+    },
+    {
+      "symbol": "USDINR=X",
+      "name": "USD / INR",
+      "unit": "INR / USD"
+    },
+    {
+      "symbol": "GC=F",
+      "name": "Gold",
+      "unit": "USD / troy oz"
+    },
+    {
+      "symbol": "SI=F",
+      "name": "Silver",
+      "unit": "USD / troy oz"
+    }
+  ]
+}
