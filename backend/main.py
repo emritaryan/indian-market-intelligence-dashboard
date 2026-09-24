@@ -103,9 +103,13 @@ from threading import Thread
 from copy import deepcopy
 from pydantic import model_validator
 from signals import scan
+from momentum import scan_momentum
 
 SCAN_LOCK = RLock()
+MOMENTUM_LOCK = RLock()
+BACKGROUND_SCAN_LOCK = RLock()
 SCAN_JOB = {"status": "idle", "completed": 0, "total": 0}
+MOMENTUM_JOB = {"status": "idle", "completed": 0, "total": 0}
 
 class ScanInput(BaseModel):
     short_sma: int = Field(default=6, ge=1, le=249, strict=True)
@@ -118,6 +122,10 @@ class ScanInput(BaseModel):
         if self.short_sma >= self.long_sma:
             raise ValueError("Short SMA must be smaller than Long SMA.")
         return self
+
+
+class MomentumInput(BaseModel):
+    max_recommendations: int = Field(default=50, ge=1, le=50, strict=True)
 
 
 def update_scan(**values):
@@ -137,9 +145,11 @@ def run_scan(kite, settings):
 @app.post("/api/signals", status_code=202)
 def generate_signals(settings: ScanInput):
     kite = load_client()
-    with SCAN_LOCK:
+    with BACKGROUND_SCAN_LOCK, SCAN_LOCK, MOMENTUM_LOCK:
         if SCAN_JOB["status"] == "running":
             raise HTTPException(409, "A scan is already running. Wait for it to finish.")
+        if MOMENTUM_JOB["status"] == "running":
+            raise HTTPException(409, "The momentum scan is running. Wait for it to finish.")
         SCAN_JOB.clear()
         SCAN_JOB.update(status="running", completed=0, total=settings.max_stocks,
                         message="Loading official Nifty 100 constituents…")
@@ -151,6 +161,51 @@ def signal_status():
     load_client()
     with SCAN_LOCK:
         return deepcopy(SCAN_JOB)
+
+
+def update_momentum(**values):
+    with MOMENTUM_LOCK:
+        MOMENTUM_JOB.update(values)
+
+
+def run_momentum(kite, settings):
+    try:
+        result = scan_momentum(kite, settings, update_momentum)
+        update_momentum(status="complete", message="Momentum scan complete", result=result)
+    except TokenException:
+        update_momentum(status="error", auth_expired=True,
+                        message="Kite session expired. Please sign in again.")
+    except Exception:
+        update_momentum(
+            status="error",
+            message="Momentum scan could not complete. Check the official CSV connection and Kite historical data access, then retry.",
+        )
+
+
+@app.post("/api/momentum", status_code=202)
+def generate_momentum(settings: MomentumInput):
+    kite = load_client()
+    with BACKGROUND_SCAN_LOCK, SCAN_LOCK, MOMENTUM_LOCK:
+        if MOMENTUM_JOB["status"] == "running":
+            raise HTTPException(409, "The momentum scan is already running. Wait for it to finish.")
+        if SCAN_JOB["status"] == "running":
+            raise HTTPException(409, "The SMA signal scan is running. Wait for it to finish.")
+        MOMENTUM_JOB.clear()
+        MOMENTUM_JOB.update(
+            status="running",
+            completed=0,
+            total=100,
+            message="Loading official Nifty 100 constituents…",
+        )
+        Thread(target=run_momentum, args=(kite, settings.model_dump()), daemon=True).start()
+        return deepcopy(MOMENTUM_JOB)
+
+
+@app.get("/api/momentum")
+def momentum_status():
+    load_client()
+    with MOMENTUM_LOCK:
+        return deepcopy(MOMENTUM_JOB)
 
 
 from overview import quote_data, history_data, macro_data
@@ -214,3 +269,4 @@ def stock_chart(symbol: str, range: str = Query(default="1Y", pattern="^(1M|3M|6
         raise HTTPException(400, str(error)) from None
     except Exception:
         raise HTTPException(502, "Stock chart is temporarily unavailable. Please retry.") from None
+
