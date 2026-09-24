@@ -38,6 +38,7 @@ The [portfolio case study](docs/PORTFOLIO_CASE_STUDY.md) explains the product pr
 - **User** — validates the saved Kite session and shows the authenticated profile, products, and exchanges.
 - **Overview** — presents index trends, market direction, Nifty 100 gainers and losers, a sector heatmap, commodities, currencies, and open IPOs.
 - **Signals** — scans the official Nifty 100 universe for configurable short/long SMA crossovers and ranks the latest signals.
+- **Momentum indicator** — filters the Nifty 100 for bullish swing-trading alignment using RSI, MACD, and 50/200-day exponential moving averages.
 - **Stock View** — searches a Nifty 100 stock and combines price/volume history, RSI, moving averages, MACD, ATR, delivery participation, and available fundamentals.
 
 ## Architecture
@@ -145,6 +146,17 @@ The scanner:
 Default inputs are SMA 6, SMA 30, a 730-calendar-day lookback, and 100 stocks. Today's partial candle is excluded. Results represent the crossover session price and averages rather than the current quote.
 
 Scanner code is in `backend/signals.py`; UI code is in `frontend/src/Signals.jsx`.
+
+### Momentum indicator
+
+The bullish momentum filter scans the full Nifty 100 and returns at most 50 stocks. A stock qualifies only when every fixed rule passes on its latest completed daily candle:
+
+- RSI 14 is above 60.
+- The MACD 12/26 line is above its 9-period signal line.
+- Closing price is above the 50-day EMA.
+- Closing price is above the 200-day EMA.
+
+Qualifying stocks are ranked by RSI and then MACD spread. The results table shows the session, close, indicator values, and both exponential averages. Scanner code is in `backend/momentum.py`; UI code is in `frontend/src/MomentumIndicator.jsx`.
 
 ### Stock View
 
