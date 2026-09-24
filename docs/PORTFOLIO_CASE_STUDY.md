@@ -21,11 +21,12 @@ The dashboard brings four workflows into one interface:
 
 ## Product outcome
 
-The result is a locally hosted React and FastAPI application with four focused tabs:
+The result is a locally hosted React and FastAPI application with five focused tabs:
 
 - **User** — displays the authenticated Kite profile and supported products/exchanges.
 - **Overview** — summarizes index trends, market direction, gainers and losers, the Nifty 100 heatmap, commodities, currencies, and open IPOs.
 - **Signals** — runs a configurable Nifty 100 SMA crossover scan and ranks the latest signals.
+- **Momentum indicator** — identifies bullish Nifty 100 swing-trading candidates that pass RSI, MACD, and 50/200-day EMA rules.
 - **Stock View** — provides symbol search, interactive price and volume history, swing-trading indicators, delivery-volume analysis, and company fundamentals.
 
 ## Product screenshots
@@ -89,6 +90,10 @@ SMA(n) = sum of the latest n closing prices / n
 ```
 
 A bullish crossover occurs when the short SMA moves from at or below the long SMA to above it. A bearish crossover is the opposite transition. Results are ordered by crossover date, most recent first.
+
+### Bullish momentum filter
+
+The momentum scanner applies four conditions to the latest completed daily candle for every mapped Nifty 100 stock: RSI 14 above 60, MACD 12/26 above its 9-period signal line, close above EMA 50, and close above EMA 200. All four rules must pass. Matches are ranked by RSI and MACD spread, and the interface limits the recommendation list to 50 stocks.
 
 ### Market overview
 
